@@ -1,0 +1,48 @@
+class Pets():
+    animals = []
+
+    def __init__(self, animals):
+        self.animals = animals
+
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
+
+
+class Cat():
+    is_lazy = True
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def walk(self):
+        return f'{self.name} is just walking around'
+
+
+class Simon(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+class Sally(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+class Garfield(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+simon = Simon('Simon', 3)
+sally = Sally('Sally', 5)
+garfield = Garfield('Garfield', 6)
+
+my_cats = [simon, sally, garfield]
+
+# instantiate the Pets class with all your cats
+my_pets = Pets(my_cats)
+
+# output all your cats that are walking around using the my_pets instance
+my_pets.walk()
